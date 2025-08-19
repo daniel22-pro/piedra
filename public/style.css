@@ -1,0 +1,202 @@
+/* Fondo degradado más suave y tipografía mejorada */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #3d95ed, #dbe9ff);
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Título principal con sombra más sutil y tamaño ajustado */
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de opciones (botones) con separación y flex-wrap */
+#opciones {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* espacio entre botones */
+  flex-wrap: wrap; /* que se ajuste en pantallas pequeñas */
+  margin-bottom: 40px;
+}
+
+/* Botones estilizados */
+#opciones button {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: #0033cc;
+  font-weight: 600;
+  user-select: none;
+}
+
+#opciones button img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+/* Efecto hover para botones */
+#opciones button:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 15px rgba(0, 51, 204, 0.4);
+  background: #e6f0ff;
+}
+
+/* Texto debajo de la imagen dentro del botón */
+#opciones button div {
+  font-size: 1rem;
+}
+
+/* Ajuste responsive para móviles */
+@media (max-width: 480px) {
+  #opciones {
+    gap: 12px;
+  }
+  #opciones button {
+    width: 80px;
+    padding: 8px 10px;
+  }
+  #opciones button img {
+    width: 45px;
+    height: 45px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Contenedor de elecciones (qué eligieron ambos) */
+#elecciones {
+  margin: 30px 0 20px;
+  font-size: 1.2rem;
+  color: #0033cc;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+#elecciones p {
+  margin: 8px 0;
+}
+
+/* Resultado del juego: contenedor de imágenes y mensaje */
+#resultado {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 180px;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(26, 115, 232, 0.6);
+}
+
+/* Contenedor de imágenes dentro de resultado */
+#elecciones-mostrar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Contenedor individual para cada elección */
+#eleccion-usuario-mostrar, #eleccion-computadora-mostrar {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0033cc;
+  font-weight: 600;
+  user-select: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Imagenes resultado con estilo igual a los botones */
+#eleccion-usuario-mostrar img,
+#eleccion-computadora-mostrar img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+  object-fit: contain;
+}
+
+/* Efecto hover igual que botones para contenedores de imágenes */
+#eleccion-usuario-mostrar:hover,
+#eleccion-computadora-mostrar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 15px rgba(0, 51, 204, 0.4);
+  background: #e6f0ff;
+}
+
+/* Mensaje del resultado */
+#mensaje-resultado {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  min-height: 2.2rem;
+  transition: color 0.3s ease;
+  max-width: 500px;
+  user-select: none;
+}
+
+/* Cambiar color según resultado, por ejemplo clases que puedes agregar desde JS */
+#mensaje-resultado.gana {
+  color: #2e7d32; /* verde para ganar */
+  text-shadow: 1px 1px 5px rgba(46, 125, 50, 0.7);
+}
+
+#mensaje-resultado.pierde {
+  color: #c62828; /* rojo para perder */
+  text-shadow: 1px 1px 5px rgba(198, 40, 40, 0.7);
+}
+
+#mensaje-resultado.empate {
+  color: #f9a825; /* amarillo para empate */
+  text-shadow: 1px 1px 5px rgba(249, 168, 37, 0.7);
+}
+
+/* Conteo de puntos */
+#conteo {
+  font-size: 1.4rem;
+  color: #004aad;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #dbe9ffcc;
+  box-shadow: 0 3px 8px rgba(0, 0, 77, 0.15);
+  width: fit-content;
+  margin: 0 auto 40px;
+  user-select: none;
+  min-width: 230px;
+  letter-spacing: 0.05em;
+}
+
+/* Estilos para los números dentro del conteo */
+#conteo span {
+  font-weight: 800;
+  color: #002884;
+}

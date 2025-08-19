@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Piedra, Papel, Tijera, Lagarto, Spock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
+
+<div id="opciones">
+  <button onclick="jugar('piedra')">
+    <img src="img/piedra.png" alt="Piedra" />
+    <div>Piedra</div>
+  </button>
+  <button onclick="jugar('papel')">
+    <img src="img/papel.png" alt="Papel" />
+    <div>Papel</div>
+  </button>
+  <button onclick="jugar('tijera')">
+    <img src="img/tijera.png" alt="Tijera" />
+    <div>Tijera</div>
+  </button>
+  <button onclick="jugar('lagarto')">
+    <img src="img/lagarto.png" alt="Lagarto" />
+    <div>Lagarto</div>
+  </button>
+  <button onclick="jugar('spock')">
+    <img src="img/spock.png" alt="Spock" />
+    <div>Spock</div>
+  </button>
+</div>
+
+  
+
+<div id="resultado">
+  <div id="elecciones-mostrar" style="display:flex; justify-content:center; gap: 40px; align-items:center; margin-bottom: 20px;">
+    <div id="eleccion-usuario-mostrar" style="text-align:center;">
+      <p>👤 Tú elegiste:</p>
+      <img id="img-usuario" src="img/piedra.png" alt="Elección Usuario" style="width: 100px; height: 100px; object-fit: contain;" />
+    </div>
+    <div id="eleccion-computadora-mostrar" style="text-align:center;">
+      <p>💻 Computadora </p>
+      <img id="img-computadora" src="img/papel.png" alt="Elección Computadora" style="width: 100px; height: 100px; object-fit: contain;" />
+    </div>
+  </div>
+  <p id="mensaje-resultado" style="font-size: 1.8rem; font-weight: 700; color: #1a73e8; text-align: center;">Elige una opción para jugar</p>
+</div>
+  <div id="resultado"></div>
+  <div id="conteo">
+  <p>Usuario: <span id="usuario">0</span> | Computadora: <span id="computadora">0</span></p>
+  </div>
+
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
